@@ -1,6 +1,6 @@
 tsParticles.load({
     background: {
-        color: "#000",
+        color: "#011926",
     },
     fullScreen: {
         enable: true,
