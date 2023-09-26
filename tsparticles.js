@@ -2,9 +2,7 @@ tsParticles.load({
     background: {
         color: "#011926",
     },
-    fullScreen: {
-        enable: true,
-    },
+
     interactivity: {
         events: {
             onHover: {
