@@ -27,6 +27,7 @@ a, .button {
 /* Navbar */
 nav, .nav-links{
     display: flex;
+    background-color: #ffffff;
 
 }
 nav{
@@ -36,14 +37,14 @@ nav{
     justify-content: space-around;
     align-items: center;
     top: 0;
-    height: 12vh;
+    height: 8vh;
     
 }
 .nav-links{
     position: relative;
     gap: 2rem;
     list-style: none;
-    font-size: 1rem;
+    font-size: 1.3rem;
 }
 a{
     color: black;
@@ -58,7 +59,7 @@ a:hover{
     text-decoration-color: rgb(181, 181, 181);
 }
 .nav-name{
-font-size: 2rem;
+font-size: 2.5rem;
 position: relative;
 }
 .nav-name:hover{
@@ -177,6 +178,7 @@ section{
 }
 .section__text_p1{
     text-align: center;
+    font-size: 1.75rem;
 }
 .section__text_p2{
     font-size: 1.75rem;
@@ -239,6 +241,37 @@ section{
 }
 .btn-container{
     gap:1rem;
+}
+.anim-typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blinkTextCursor {
+    from { border-right-color: black; }
+    to { border-right-color: transparent; }
+}
+
+/* Apply animation to your elements */
+#text1 {
+    animation: typewriter 1.5s steps(20) 0s 1 normal both, 
+               blinkTextCursor 500ms steps(20) infinite normal;
+}
+
+#text2 {
+    animation: typewriter 2.5s steps(20) 1.9s 1 normal both, 
+               blinkTextCursor 500ms steps(20) infinite normal;
+}
+
+#text3 {
+    animation: typewriter 2s steps(20) 4.5s 1 normal both, 
+               blinkTextCursor 500ms steps(20) infinite normal;
 }
 
 #about{
