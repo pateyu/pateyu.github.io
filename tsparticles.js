@@ -1,6 +1,6 @@
 tsParticles.load({
     background: {
-        color: "#011926",
+        color: FFFFFF,
     },
 
     interactivity: {
@@ -73,7 +73,7 @@ tsParticles.load({
             type: ["circle", "triangle", "star"],
         },
         color: {
-            value: "#FFFFFF", // Changed to white
+            value: "#000000", // Changed to white
         },
         twinkle: {
             lines: {

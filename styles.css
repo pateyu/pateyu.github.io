@@ -36,12 +36,12 @@ nav{
     justify-content: space-around;
     align-items: center;
     top: 0;
-    height: 8vh;
+    height: 12vh;
     
 }
 .nav-links{
     position: relative;
-    gap: 1.5rem;
+    gap: 2rem;
     list-style: none;
     font-size: 1rem;
 }
@@ -104,10 +104,12 @@ position: relative;
     padding: 10px;
     text-align: center;
     font-size: 1.5rem;
+    color: #000000;
+    text-decoration: none;
     text-align: none;
     transition: all 0.3 ease-in-out;
 }
-.menu-linksli{
+.menu-links li{
     list-style: none;
 
 }
@@ -131,7 +133,7 @@ position: relative;
     transform: none
 }
 .ham-icon span:first-child{
-    opacity: none;
+    opacity: 1;
 }
 
 
@@ -139,14 +141,15 @@ position: relative;
 
 section{
     padding-top: 4vh;
-    height: 96vh;
-    margin: 0 10rem;
+    margin: 0vh 20vw;
     box-sizing: border-box;
     min-height: fit-content;
+    height: 100vh;
     
 }
 .section-container{
     display: flex;
+    justify-content: center;
 }
 
 /* profile */
@@ -154,7 +157,7 @@ section{
     display: flex;  
     justify-content: center; 
     gap: 5rem;
-    height: 80vh;
+    height: 90vh;
 }
 
 .section__pic-container{
@@ -166,6 +169,7 @@ section{
 .section__text{
     align-self: center;
     text-align: center;
+    margin-right: 10vw;
 
 }
 .section__text p{
