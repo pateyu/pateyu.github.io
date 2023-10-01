@@ -1,9 +1,15 @@
-@media screen and (max-width: 1200px){
-    #navbar{
-        display: none;
-    }
-    #ham-nav{
-        display: flex;
-    
-    }
+@media screen and (max-width: 1200px) {
+  #navbar {
+    display: none;
+  }
+  #ham-nav {
+    display: flex;
+  }
+}
+@media (max-width: 768px) {
+  .section__pic-container,
+  .project-img {
+    width: 100%;
+    height: auto;
+  }
 }
