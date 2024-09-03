@@ -5,10 +5,10 @@ module.exports = {
         sans: ["Poppins", "sans-serif"],
       },
       colors: {
-        "dark-navy": "#0a192f", // Dark navy background color
-        "light-blue": "#64ffda", // Accent color
-        "gray-300": "#d1d5db", // Light gray text color
-        "gray-700": "#374151", // Dark gray for cards
+        "dark-navy": "#0a192f", 
+        "light-blue": "#64ffda", 
+        "gray-300": "#d1d5db", 
+        "gray-700": "#374151", 
       },
     },
   },

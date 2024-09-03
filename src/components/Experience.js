@@ -134,6 +134,7 @@ const experiences = [
   },
 ];
 
+
 function useOutsideClick(ref, callback) {
   useEffect(() => {
     function handleClickOutside(event) {
@@ -175,63 +176,93 @@ function Experience() {
 
   return (
     <section id="experience" className="py-32 text-center text-white">
-      <h2 className="text-4xl font-bold mb-16 text-light-blue">Experience</h2>
-      {active && typeof active === "object" && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-md h-full w-full z-10" />
-      )}
-      {active && typeof active === "object" && (
-        <div className="fixed inset-0 overflow-y-auto z-[102]">
-          <div className="flex justify-center items-center min-h-full p-4">
-            <div
-              ref={ref}
-              className="w-full max-w-[500px] sm:max-w-[40%] h-auto max-h-[70vh] sm:h-[30vh] flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl shadow-lg p-8"
-            >
-              <div className="flex justify-between items-start p-4">
-                <div className="">
-                  <h3 className="text-3xl font-extrabold text-neutral-700 dark:text-neutral-200">
-                    {active.title}
-                  </h3>
-                </div>
-                <div className="text-right">
-                  <p className="text-lg text-neutral-600 dark:text-neutral-400">
-                    {active.company}
-                  </p>
-                  <p className="text-lg text-neutral-500 dark:text-neutral-400 mt-2">
-                    {active.duration}
-                  </p>
-                </div>
-              </div>
-              <div className="pt-4 relative px-4 text-left overflow-y-auto max-h-[40vh]">
-                <div className="text-neutral-700 dark:text-neutral-300 text-base md:text-lg leading-relaxed dark:text-neutral-400">
-                  {typeof active.content === "function"
-                    ? active.content()
-                    : active.content}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      <motion.h2
+        className="text-4xl font-bold mb-16 text-light-blue"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        Experience
+      </motion.h2>
+
       <ul className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {experiences.map((exp, index) => (
-          <div
+          <motion.div
             key={`card-${exp.title}-${exp.company}-${id}`}
             onClick={() => setActive(exp)}
-            className="p-8 flex flex-col justify-between items-center rounded-xl cursor-pointer bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 hover:bg-light-blue dark:hover:bg-light-blue"
+            className="p-8 flex flex-col justify-center rounded-xl cursor-pointer bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 hover:bg-light-blue dark:hover:bg-light-blue h-48"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.3, duration: 0.5 }}
           >
-            <div className="flex flex-col items-center text-center">
+            <div className="flex flex-col items-center text-center h-full justify-between">
               <h3 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
                 {exp.title}
               </h3>
-              <p className="text-neutral-600 dark:text-neutral-400 text-sm mt-2">
+              <p className="text-neutral-600 dark:text-neutral-400 text-sm">
                 {exp.company}
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </ul>
+
+      <AnimatePresence>
+        {active && typeof active === "object" && (
+          <>
+            <motion.div
+              className="fixed inset-0 bg-black/50 backdrop-blur-md h-full w-full z-10"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            />
+
+            <motion.div
+              className="fixed inset-0 overflow-y-auto z-[102]"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="flex justify-center items-center min-h-full p-4">
+                <motion.div
+                  ref={ref}
+                  className="w-full max-w-[500px] sm:max-w-[40%] h-auto max-h-[70vh] sm:h-[50vh] flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl shadow-lg p-8"
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: 100, opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <div className="p-4">
+                    <h3 className="text-3xl font-extrabold text-neutral-700 dark:text-neutral-200">
+                      {active.title}
+                    </h3>
+                    <div className="mt-4 text-center">
+                      <p className="text-lg text-neutral-600 dark:text-neutral-400">
+                        {active.company}
+                      </p>
+                      <p className="text-lg text-neutral-500 dark:text-neutral-400 mt-2">
+                        {active.duration}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="pt-4 relative px-4 text-left overflow-y-auto max-h-[70vh]">
+                    <div className="text-neutral-700 dark:text-neutral-300 text-base md:text-lg leading-relaxed dark:text-neutral-400">
+                      {typeof active.content === "function"
+                        ? active.content()
+                        : active.content}
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+
       <div className="h-32"></div>{" "}
-      {/* Adding extra space at the bottom of the section */}
+
     </section>
   );
 }
