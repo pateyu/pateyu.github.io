@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaReact, FaNodeJs, FaPython, FaFlask, FaGithub, FaDatabase } from "react-icons/fa";
+import { SiTailwindcss, SiJavascript } from "react-icons/si";
+import { Tooltip } from 'react-tooltip';
 
 const Projects = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -8,24 +11,45 @@ const Projects = () => {
     {
       title: "AmrtyuBot",
       description:
-        "A Discord Study bot with Canvas Integration, Study Timer, and more.",
+        "A Discord Study bot with Canvas Integration, Study Timer, and more. Named after my gamertag becasue I would rather be gaming.",
       link: "https://github.com/pateyu/AmrtyuBot",
+      skills: [
+        { icon: <FaPython />, name: "Python" },
+        { icon: <FaGithub />, name: "GitHub" },
+      ],
     },
     {
       title: "CLAIA",
-      description: "A CLI Tool with OpenAI integration. Can generate code, text, run commands, and receive answers all from the command line!",
+      description:
+        "A CLI Tool with OpenAI integration. Can generate code, text, run commands, and receive answers all from the command line!",
       link: "https://github.com/pateyu/CLAIA",
+      skills: [
+        { icon: <SiJavascript />, name: "JavaScript" },
+        { icon: <FaNodeJs />, name: "Node.js" },
+        { icon: <FaGithub />, name: "GitHub" },
+      ],
     },
     {
       title: "Global Food Library",
-      description: "A dynamic culinary platform with personalized recipe management and advanced search capabilities.",
+      description:
+        "A dynamic culinary platform with personalized recipe management and advanced search capabilities. Comes with dietary filters, ratings, and custom cookbooks.",
       link: "https://github.com/pateyu/CookbookProject",
+      skills: [
+        { icon: <FaFlask />, name: "Flask" },
+        { icon: <SiTailwindcss />, name: "Tailwind CSS" },
+        { icon: <FaDatabase />, name: "SQL" },
+      ],
     },
     {
       title: "Portfolio Website",
       description:
         "This website! Built with React, Tailwind CSS, and Framer Motion.",
       link: "https://github.com/pateyu/pateyu.github.io",
+      skills: [
+        { icon: <FaReact />, name: "React" },
+        { icon: <SiTailwindcss />, name: "Tailwind CSS" },
+        { icon: <FaGithub />, name: "GitHub" },
+      ],
     },
   ];
 
@@ -46,7 +70,7 @@ const Projects = () => {
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative group block p-2 w-full"
+            className="relative group block p-2 w-full h-full"
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
             initial={{ opacity: 0, scale: 0.8 }}
@@ -72,13 +96,21 @@ const Projects = () => {
               )}
             </AnimatePresence>
             <motion.div
-              className="relative z-10 bg-gray-800 p-6 rounded-lg shadow-lg group-hover:shadow-2xl transition-transform transform ease-in-out duration-300 h-48 flex flex-col justify-between"
+              className="relative z-10 bg-gray-800 p-6 rounded-lg shadow-lg group-hover:shadow-2xl transition-transform transform ease-in-out duration-300 h-64 flex flex-col justify-between"
               initial={{ scale: 1 }}
               animate={{ scale: 1.05 }}
               transition={{ duration: 0.5, delay: projects.length * 0.2 }}
             >
               <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
-              <p className="text-gray-300">{project.description}</p>
+              <p className="text-gray-300 mb-4">{project.description}</p>
+              <div className="flex space-x-4 mt-auto justify-end">
+                {project.skills.map((skill, idx) => (
+                  <span key={idx} data-tooltip-id={`tooltip-${index}-${idx}`} className="text-2xl">
+                    {skill.icon}
+                    <Tooltip id={`tooltip-${index}-${idx}`} content={skill.name} />
+                  </span>
+                ))}
+              </div>
             </motion.div>
           </motion.a>
         ))}
