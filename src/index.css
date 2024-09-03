@@ -84,3 +84,7 @@ code {
     border-color: #ffffff;
   }
 }
+.backdrop-blur {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px); /* For Safari support */
+}

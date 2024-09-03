@@ -7,10 +7,11 @@ import About from "./components/About";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
-import particlesOptions from "./particles.json"; // Import the particles configuration
+import particlesOptions from "./particles.json";
 
 function App() {
   const [init, setInit] = useState(false);
+  const [refresh, setRefresh] = useState(0); // State to trigger a re-render
 
   useEffect(() => {
     if (init) {
@@ -23,6 +24,20 @@ function App() {
       setInit(true);
     });
   }, [init]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setRefresh((prev) => prev + 1); // Trigger a re-render by updating the state
+    };
+
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("orientationchange", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("orientationchange", handleResize);
+    };
+  }, []);
 
   return (
     <div className="App bg-dark-navy text-white min-h-screen relative">

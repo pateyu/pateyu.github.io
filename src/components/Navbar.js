@@ -12,13 +12,10 @@ const Navbar = () => {
     <>
       <motion.nav
         id="navbar"
-        className="flex justify-between items-center text-white sticky top-0 w-full h-24 z-50 px-8"
+        className="flex justify-between items-center text-white sticky top-0 w-full h-24 z-50 px-8 backdrop-blur"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        style={{
-          backdropFilter: "blur(5px)",
-        }}
       >
         <div className="flex items-center">
           <img
@@ -74,29 +71,38 @@ const Navbar = () => {
 
       <AnimatePresence>
         {menuOpen && (
-          <motion.nav
-            id="ham-nav"
-            className="md:hidden flex flex-col items-center bg-dark-navy text-white fixed inset-0 z-40"
-            initial={{ opacity: 0, x: "-100%" }}
-            animate={{ opacity: 1, x: "0%" }}
-            exit={{ opacity: 0, x: "-100%" }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
+          <motion.div
+            className="fixed inset-0 z-40 bg-black bg-opacity-50 backdrop-blur-lg"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
           >
-            <div className="text-2xl font-extrabold mt-8">Yug Patel</div>
-            <ul className="menu-links flex flex-col items-center mt-8 gap-8 text-lg">
-              {["About", "Experience", "Projects", "Contact"].map((item) => (
-                <li key={item}>
-                  <a
-                    href={`#${item.toLowerCase()}`}
-                    onClick={toggleMenu}
-                    className="hover:text-light-blue transition duration-300 font-extrabold"
-                  >
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </motion.nav>
+            <motion.nav
+              id="ham-nav"
+              className="md:hidden flex flex-col items-center text-white fixed inset-0 z-50 pt-24"
+              initial={{ opacity: 0, x: "-100%" }}
+              animate={{ opacity: 1, x: "0%" }}
+              exit={{ opacity: 0, x: "-100%" }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+            >
+              <ul className="menu-links flex flex-col items-center mt-8 gap-8 text-lg">
+                {["About", "Experience", "Projects", "Contact"].map(
+                  (item, index) => (
+                    <li key={item} className={`${index === 0 ? "mt-12" : ""}`}>
+                      <a
+                        href={`#${item.toLowerCase()}`}
+                        onClick={toggleMenu}
+                        className="hover:text-light-blue transition duration-300 font-extrabold"
+                      >
+                        {item}
+                      </a>
+                    </li>
+                  )
+                )}
+              </ul>
+            </motion.nav>
+          </motion.div>
         )}
       </AnimatePresence>
     </>
