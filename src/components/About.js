@@ -25,7 +25,7 @@ const About = () => {
         >
           <img
             src="img/about.jpg"
-            alt="About image"
+            alt="About"
             className="h-64 w-64 md:h-96 md:w-96 rounded-2xl border-4 border-light-blue shadow-lg"
           />
         </motion.div>

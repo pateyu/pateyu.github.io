@@ -228,21 +228,21 @@ function Experience() {
               <div className="flex justify-center items-center min-h-full p-4">
                 <motion.div
                   ref={ref}
-                  className="w-full max-w-[500px] sm:max-w-[40%] h-auto max-h-[70vh] sm:h-[50vh] flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl shadow-lg p-8"
+                  className="w-full max-w-[500px] sm:max-w-[40%] h-auto max-h-[70vh] sm:h-[50vh] flex flex-col justify-center bg-white dark:bg-neutral-900 sm:rounded-3xl shadow-lg p-8"
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: 100, opacity: 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <div className="p-4">
+                  <div className="flex flex-col items-center text-center h-full justify-center">
                     <h3 className="text-3xl font-extrabold text-neutral-700 dark:text-neutral-200">
                       {active.title}
                     </h3>
-                    <div className="mt-4 text-center">
+                    <div className="mt-4">
                       <p className="text-lg text-neutral-600 dark:text-neutral-400">
                         {active.company}
                       </p>
-                      <p className="text-lg text-neutral-500 dark:text-neutral-400 mt-2">
+                      <p className="text-lg text-neutral-500 dark:text-neutral-400 mt-2 pb-3">
                         {active.duration}
                       </p>
                     </div>
@@ -262,7 +262,6 @@ function Experience() {
       </AnimatePresence>
 
       <div className="h-32"></div>{" "}
-
     </section>
   );
 }

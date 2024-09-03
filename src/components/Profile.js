@@ -15,7 +15,7 @@ const Profile = () => {
       <div className="section__pic-container z-10 mb-4">
         <img
           src="./img/pfp1.png"
-          alt="Yug Patel's Profile Picture"
+          alt="Yug Patel"
           className="h-72 w-72 md:h-96 md:w-96 rounded-full border-4 border-light-blue"
         />
       </div>

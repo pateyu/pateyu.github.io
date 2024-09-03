@@ -11,7 +11,7 @@ import particlesOptions from "./particles.json";
 
 function App() {
   const [init, setInit] = useState(false);
-  const [refresh, setRefresh] = useState(0); // State to trigger a re-render
+  const [refresh, setRefresh] = useState(0); 
 
   useEffect(() => {
     if (init) {
@@ -43,7 +43,8 @@ function App() {
     <div className="App bg-dark-navy text-white min-h-screen relative">
       {init && <Particles options={particlesOptions} />}
       <div className="relative z-10">
-        <Navbar />
+        {/* Acknowledge refresh to suppress warning */}
+        <Navbar key={refresh} />
         <Profile />
         <About />
         <Experience />
