@@ -11,7 +11,7 @@ import particlesOptions from "./particles.json";
 
 function App() {
   const [init, setInit] = useState(false);
-  const [refresh, setRefresh] = useState(0); 
+  const [refresh, setRefresh] = useState(0);
 
   useEffect(() => {
     if (init) {

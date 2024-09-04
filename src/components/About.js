@@ -30,12 +30,12 @@ const About = () => {
           />
         </motion.div>
         <motion.div
-          className="text-container max-w-sm md:max-w-xl mx-3 text-lg md:text-2xl font-bold leading-relaxed"
+          className="text-container max-w-sm md:max-w-xl mx-3 text-lg md:text-2xl leading-relaxed"
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 1.5 }}
         >
-          <p className="text-gray-300 mb-8">
+          <p className="text-white-900 font-semibold mb-8">
             Hello! I'm a third-year Computer Science student at Missouri
             University of Science and Technology, who is minoring in
             Mathematics. My passion lies in Artificial Intelligence, Web and App

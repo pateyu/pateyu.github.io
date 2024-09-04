@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaReact, FaNodeJs, FaPython, FaFlask, FaGithub, FaDatabase } from "react-icons/fa";
+import {
+  FaReact,
+  FaNodeJs,
+  FaPython,
+  FaFlask,
+  FaGithub,
+  FaDatabase,
+} from "react-icons/fa";
 import { SiTailwindcss, SiJavascript } from "react-icons/si";
-import { Tooltip } from 'react-tooltip';
+import { Tooltip } from "react-tooltip";
 
 const Projects = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -54,7 +61,12 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-32 text-center text-white">
+    <section
+      id="projects"
+      className="py-32 text-center min-h-screen text-white"
+    >
+      {" "}
+      {/* Removed h-screen */}
       <motion.h2
         className="text-4xl font-bold mb-12 text-light-blue"
         initial={{ opacity: 0, y: -50 }}
@@ -63,7 +75,7 @@ const Projects = () => {
       >
         My Projects
       </motion.h2>
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 overflow-hidden">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
           <motion.a
             key={index}
@@ -105,9 +117,16 @@ const Projects = () => {
               <p className="text-gray-300 mb-4">{project.description}</p>
               <div className="flex space-x-4 mt-auto justify-end">
                 {project.skills.map((skill, idx) => (
-                  <span key={idx} data-tooltip-id={`tooltip-${index}-${idx}`} className="text-2xl">
+                  <span
+                    key={idx}
+                    data-tooltip-id={`tooltip-${index}-${idx}`}
+                    className="text-2xl"
+                  >
                     {skill.icon}
-                    <Tooltip id={`tooltip-${index}-${idx}`} content={skill.name} />
+                    <Tooltip
+                      id={`tooltip-${index}-${idx}`}
+                      content={skill.name}
+                    />
                   </span>
                 ))}
               </div>
