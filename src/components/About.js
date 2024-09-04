@@ -52,7 +52,7 @@ const About = () => {
           className="section__pic-container"
           initial={{ x: -100, opacity: 0 }}
           animate={inView ? { x: 0, opacity: 1 } : {}}
-          transition={{ duration: 1, delay: 1.5 }}
+          transition={{ duration: 1, delay: 1 }}
         >
           <img
             src="img/about.jpg"
@@ -64,7 +64,7 @@ const About = () => {
           className="text-container max-w-sm md:max-w-xl mx-3 text-lg md:text-2xl leading-relaxed"
           initial={{ x: 100, opacity: 0 }}
           animate={inView ? { x: 0, opacity: 1 } : {}}
-          transition={{ duration: 1, delay: 1.5 }}
+          transition={{ duration: 1, delay: 1 }}
         >
           <p className="text-white-900 font-semibold mb-8">
             Hello! I'm a third-year Computer Science student at Missouri
