@@ -168,8 +168,9 @@ const Contact = () => {
 
       <footer className="mt-36 text-white-900 flex justify-center flex-col items-center">
         <p className="mb-1">© 2024 Yug Patel. All Rights Reserved.</p>
-        <p className="mb-1">Email: yugbpatel30@gmail.com</p>
-        <p className="mb-1">Discord: awmali</p>
+        <p className="mb-1">
+          Discord: AwMali | 224-830-5776 | yugbpatel30@gmail.com
+        </p>
       </footer>
     </section>
   );
