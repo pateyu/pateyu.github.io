@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
-
+import { useInView } from "./useInView";
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
+  const contactRef = useRef(null); // Create a ref
+  const inView = useInView(contactRef, { threshold: 0.3 }); // Track inView status
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,7 +27,11 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative py-32 text-center text-white">
+    <section
+      id="contact"
+      ref={contactRef}
+      className="relative py-32 text-center text-white"
+    >
       {/* Waves inside the Contact section */}
       <div className="absolute bottom-0 left-0 right-0 z-[-1] overflow-hidden">
         <svg
@@ -92,7 +98,7 @@ const Contact = () => {
 
       <motion.div
         initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8 }}
       >
         <h2 className="text-4xl font-bold mb-8 text-light-blue">Contact Me</h2>
@@ -105,7 +111,7 @@ const Contact = () => {
             onSubmit={handleSubmit}
             className="max-w-lg mx-auto bg-gray-700 p-8 rounded-lg shadow-lg relative"
             initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <label

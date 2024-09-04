@@ -1,5 +1,6 @@
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useInView } from "./useInView";
 const experiences = [
   {
     title: "Undergraduate Research Assistant",
@@ -139,6 +140,8 @@ function Experience() {
   const [active, setActive] = useState(null);
   const ref = useRef(null);
   const id = useId();
+  const sectionRef = useRef(null);
+  const inView = useInView(sectionRef, { threshold: 0.3 });
 
   useEffect(() => {
     function onKeyDown(event) {
@@ -160,13 +163,14 @@ function Experience() {
   useOutsideClick(ref, () => setActive(null));
   return (
     <section
+      ref={sectionRef}
       id="experience"
       className="py-32 text-center min-h-screen text-white"
     >
       <motion.h2
         className="text-4xl font-bold mb-16 text-light-blue"
         initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5 }}
       >
         Experience
@@ -178,7 +182,7 @@ function Experience() {
             onClick={() => setActive(exp)}
             className="p-12 flex flex-col justify-center rounded-xl cursor-pointer bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 hover:bg-light-blue dark:hover:bg-light-blue h-64"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: index * 0.3, duration: 0.5 }}
           >
             <div className="flex flex-col items-center text-center h-full justify-between">
@@ -198,9 +202,9 @@ function Experience() {
             <motion.div
               className="fixed inset-0 bg-black/50 backdrop-blur-md h-full w-full z-10"
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.5 }}
             />
 
             <motion.div

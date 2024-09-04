@@ -1,26 +1,57 @@
-import React from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
+import { useInView } from "./useInView";
 
 const About = () => {
+  const aboutRef = useRef(null);
+  const inView = useInView(aboutRef, { threshold: 0.3 });
+
+  const typewriterText = "About Me";
+
+  const letterVariants = {
+    hidden: { opacity: 0 },
+    visible: (i) => ({
+      opacity: 1,
+      transition: { delay: i * 0.05 },
+    }),
+  };
+
   return (
     <motion.section
       id="about"
+      ref={aboutRef}
       className="flex flex-col justify-center items-center min-h-screen text-white px-4 md:px-8 py-12 md:py-16"
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      animate={inView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 1 }}
     >
       <p className="text-light-blue text-2xl md:text-3xl font-bold mb-4 mt-8">
         Get To Know More
       </p>
-      <h2 className="text-4xl md:text-6xl font-extrabold mb-12 mt-8 typewriter">
-        About Me
-      </h2>
+
+      <motion.h2
+        className="text-4xl md:text-6xl font-extrabold mb-12 mt-8"
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+      >
+        {typewriterText.split("").map((char, index) => (
+          <motion.span
+            key={index}
+            variants={letterVariants}
+            custom={index}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+          >
+            {char}
+          </motion.span>
+        ))}
+      </motion.h2>
+
       <div className="flex flex-col md:flex-row gap-8 md:gap-16 justify-center items-center mt-10">
         <motion.div
           className="section__pic-container"
           initial={{ x: -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
+          animate={inView ? { x: 0, opacity: 1 } : {}}
           transition={{ duration: 1, delay: 1.5 }}
         >
           <img
@@ -32,7 +63,7 @@ const About = () => {
         <motion.div
           className="text-container max-w-sm md:max-w-xl mx-3 text-lg md:text-2xl leading-relaxed"
           initial={{ x: 100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
+          animate={inView ? { x: 0, opacity: 1 } : {}}
           transition={{ duration: 1, delay: 1.5 }}
         >
           <p className="text-white-900 font-semibold mb-8">

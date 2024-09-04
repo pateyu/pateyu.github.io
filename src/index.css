@@ -42,7 +42,6 @@ code {
   }
 }
 
-
 .svg-text:hover {
   fill: #ffcc29;
 }
@@ -55,34 +54,7 @@ code {
   fill: #ffcc29;
 }
 
-.typewriter {
-  overflow: hidden;
-  border-right: 0.15em solid #ffffff;
-  white-space: nowrap;
-  margin: 0 auto;
-  letter-spacing: 0.15em;
-  animation: typing 1.5s steps(10, end), blink-caret 0.9s step-end infinite;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 10%;
-  }
-}
-
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: #ffffff;
-  }
-}
 .backdrop-blur {
   backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px); 
+  -webkit-backdrop-filter: blur(5px);
 }

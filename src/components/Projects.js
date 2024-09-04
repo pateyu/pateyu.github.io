@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FaReact,
@@ -10,15 +10,18 @@ import {
 } from "react-icons/fa";
 import { SiTailwindcss, SiJavascript } from "react-icons/si";
 import { Tooltip } from "react-tooltip";
+import { useInView } from "./useInView";
 
 const Projects = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const sectionRef = useRef(null);
+  const inView = useInView(sectionRef, { threshold: 0.3 });
 
   const projects = [
     {
       title: "AmrtyuBot",
       description:
-        "A Discord Study bot with Canvas Integration, Study Timer, and more. Named after my gamertag becasue I would rather be gaming.",
+        "A Discord Study bot with Canvas Integration, Study Timer, and more. Named after my gamertag because I would rather be gaming.",
       link: "https://github.com/pateyu/AmrtyuBot",
       skills: [
         { icon: <FaPython />, name: "Python" },
@@ -62,15 +65,14 @@ const Projects = () => {
 
   return (
     <section
+      ref={sectionRef}
       id="projects"
       className="py-32 text-center min-h-screen text-white"
     >
-      {" "}
-      {/* Removed h-screen */}
       <motion.h2
         className="text-4xl font-bold mb-12 text-light-blue"
         initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         My Projects
@@ -82,11 +84,15 @@ const Projects = () => {
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative group block p-2 w-full h-full"
+            className={`relative group block p-2 w-full h-full ${
+              projects.length % 2 === 1 &&
+              index === projects.length - 1 &&
+              "md:col-span-2 lg:col-span-1 lg:col-start-2"
+            }`}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
             initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
+            animate={inView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.6, delay: index * 0.2 }}
             whileHover={{ scale: 1.1 }}
           >
@@ -110,7 +116,7 @@ const Projects = () => {
             <motion.div
               className="relative z-10 bg-gray-800 p-6 rounded-lg shadow-lg group-hover:shadow-2xl transition-transform transform ease-in-out duration-300 h-64 flex flex-col justify-between"
               initial={{ scale: 1 }}
-              animate={{ scale: 1.05 }}
+              animate={inView ? { scale: 1.05 } : {}}
               transition={{ duration: 0.5, delay: projects.length * 0.2 }}
             >
               <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
@@ -126,6 +132,7 @@ const Projects = () => {
                     <Tooltip
                       id={`tooltip-${index}-${idx}`}
                       content={skill.name}
+                      className="p-1 text-xs rounded-lg"
                     />
                   </span>
                 ))}
