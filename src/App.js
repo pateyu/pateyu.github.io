@@ -27,7 +27,7 @@ function App() {
 
   useEffect(() => {
     const handleResize = () => {
-      setRefresh((prev) => prev + 1); // Trigger a re-render by updating the state
+      setRefresh((prev) => prev + 1);
     };
 
     window.addEventListener("resize", handleResize);
@@ -43,7 +43,6 @@ function App() {
     <div className="App bg-dark-navy text-white min-h-screen relative">
       {init && <Particles options={particlesOptions} />}
       <div className="relative z-10">
-        {/* Acknowledge refresh to suppress warning */}
         <Navbar key={refresh} />
         <Profile />
         <About />

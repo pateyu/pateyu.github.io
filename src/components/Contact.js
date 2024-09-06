@@ -1,10 +1,11 @@
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "./useInView";
+
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
-  const contactRef = useRef(null); // Create a ref
-  const inView = useInView(contactRef, { threshold: 0.3 }); // Track inView status
+  const contactRef = useRef(null);
+  const inView = useInView(contactRef, { threshold: 0.3 });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,7 +33,6 @@ const Contact = () => {
       ref={contactRef}
       className="relative py-32 text-center text-white"
     >
-      {/* Waves inside the Contact section */}
       <div className="absolute bottom-0 left-0 right-0 z-[-1] overflow-hidden">
         <svg
           width="100%"
@@ -47,7 +47,7 @@ const Contact = () => {
                 animation: pathAnim-0 4s linear infinite;
               }
               .path-1 {
-                animation: pathAnim-1 4s ease-in-out infinite;
+                animation: pathAnim-1 6s ease-in-out infinite;
               }
               @keyframes pathAnim-0 {
                 0%, 100% {
@@ -127,6 +127,7 @@ const Contact = () => {
               className="w-full p-2 mb-4 rounded-md bg-gray-800 border border-gray-600 text-white"
               placeholder="Your Name"
               required
+              autoComplete="name"
             />
             <label
               htmlFor="email"
@@ -141,6 +142,7 @@ const Contact = () => {
               className="w-full p-2 mb-4 rounded-md bg-gray-800 border border-gray-600 text-white"
               placeholder="Your Email"
               required
+              autoComplete="email"
             />
             <label
               htmlFor="message"
@@ -155,6 +157,7 @@ const Contact = () => {
               rows="5"
               placeholder="Your Message"
               required
+              autoComplete="off"
             ></textarea>
             <button
               type="submit"

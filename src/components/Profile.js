@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const Profile = () => {
-  const isMobile = window.innerWidth < 768; // Detect if the screen width is less than 768px
+  const isMobile = window.innerWidth < 768;
 
   return (
     <motion.section
