@@ -11,7 +11,10 @@
 
 
 1. Clone the Repo
-2. Run these commands:
+```bash
+git clone https://github.com/pateyu/pateyu.github.io.git
+```
+3. Run these commands:
 ```bash
 npm install
 ```
