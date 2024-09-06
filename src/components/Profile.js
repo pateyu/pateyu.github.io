@@ -2,7 +2,11 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const Profile = () => {
+<<<<<<< HEAD
   const isMobile = window.innerWidth < 768;
+=======
+  const isMobile = window.innerWidth < 768; 
+>>>>>>> 107d7a6d72bc6f357380aa4772a051f952015fb9
 
   return (
     <motion.section
@@ -79,7 +83,9 @@ const Profile = () => {
         >
           Download CV
         </motion.button>
-        <button className="border-2 border-light-blue text-light-blue px-5 py-2 rounded-full font-semibold hover:bg-light-blue hover:text-dark-navy transition duration-300 w-36 text-center">
+        
+        <button onClick={() => window.location.href = "#contact"} className="border-2 border-light-blue text-light-blue px-5 py-2 rounded-full font-semibold hover:bg-light-blue hover:text-dark-navy transition duration-300 w-36 text-center">
+          
           Contact
         </button>
       </div>
