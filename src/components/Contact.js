@@ -31,7 +31,7 @@ const Contact = () => {
     <section
       id="contact"
       ref={contactRef}
-      className="relative py-32 text-center text-white"
+      className="relative py-32 text-center overflow-x-hidden overflow-hidden overflow-y-hidden text-white"
     >
       <div className="absolute bottom-0 left-0 right-0 z-[-1] overflow-hidden">
         <svg

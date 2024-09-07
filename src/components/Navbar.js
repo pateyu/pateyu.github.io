@@ -1,20 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [shouldAnimate, setShouldAnimate] = useState(true);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShouldAnimate(false);
+    }, 800); 
+    return () => clearTimeout(timer); 
+  }, []);
 
   return (
     <>
       <motion.nav
         id="navbar"
         className="flex justify-between items-center text-white sticky top-0 w-full h-24 z-50 px-8 backdrop-blur"
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={shouldAnimate ? { opacity: 0, y: -50 } : {}} 
+        animate={{ opacity: 1, y: 0 }} 
         transition={{ duration: 0.8 }}
       >
         <div className="flex items-center">

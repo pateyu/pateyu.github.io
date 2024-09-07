@@ -20,7 +20,7 @@ const About = () => {
     <motion.section
       id="about"
       ref={aboutRef}
-      className="flex flex-col justify-center items-center min-h-screen text-white px-4 md:px-8 py-12 md:py-16"
+      className="flex flex-col justify-center items-center min-h-screen overflow-x-hidden text-white px-4 md:px-8 py-12 md:py-16"
       initial={{ opacity: 0 }}
       animate={inView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 1 }}

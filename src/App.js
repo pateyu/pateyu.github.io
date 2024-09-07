@@ -44,11 +44,11 @@ function App() {
       {init && <Particles options={particlesOptions} />}
       <div className="relative z-10">
         <Navbar key={refresh} />
-        <Profile className="overflow-x-hidden" />
-        <About className="overflow-x-hidden" />
-        <Experience className="overflow-x-hidden" />
-        <Projects  className="overflow-x-hidden"/>
-        <Contact className="overflow-x-hidden" />
+        <Profile />
+        <About />
+        <Experience />
+        <Projects />
+        <Contact />
       </div>
     </div>
   );

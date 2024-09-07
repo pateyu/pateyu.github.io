@@ -165,7 +165,7 @@ function Experience() {
     <section
       ref={sectionRef}
       id="experience"
-      className="py-32 text-center min-h-screen text-white"
+      className="py-32 text-center overflow-x-hidden min-h-screen text-white"
     >
       <motion.h2
         className="text-4xl font-bold mb-16 text-light-blue"
