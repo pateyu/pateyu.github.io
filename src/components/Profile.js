@@ -10,13 +10,13 @@ const Profile = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
       id="profile"
-      className="flex flex-col justify-start items-center h-screen overflow-hidden relative font-sans pt-8"
+      className="flex flex-col justify-start items-center min-h-screen overflow-hidden relative font-sans pt-4"  
     >
       <div className="section__pic-container z-10 mb-4">
         <img
           src="./img/pfp1.png"
           alt="Yug Patel"
-          className="h-72 w-72 md:h-96 md:w-96 rounded-full border-4 border-light-blue"
+          className="h-60 w-60 md:h-80 md:w-80 rounded-full border-4 border-light-blue" 
         />
       </div>
 
@@ -28,7 +28,7 @@ const Profile = () => {
         >
           <motion.text
             x="50%"
-            y="35%"
+            y="25%"  
             textAnchor="middle"
             className="svg-text hello-text text-xl md:text-2xl"
             style={{ animationDelay: "0.5s" }}
@@ -40,7 +40,7 @@ const Profile = () => {
           </motion.text>
           <motion.text
             x="50%"
-            y="70%"
+            y="55%"  
             textAnchor="middle"
             className="svg-text name-text text-2xl md:text-4xl"
             style={{ animationDelay: "1s", fill: "#7FFFD4" }}
@@ -52,7 +52,7 @@ const Profile = () => {
           </motion.text>
           <motion.text
             x="50%"
-            y="95%"
+            y="85%"  
             textAnchor="middle"
             className="svg-subtext text-lg md:text-2xl"
             style={{ animationDelay: "2s" }}
