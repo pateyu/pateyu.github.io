@@ -40,15 +40,15 @@ function App() {
   }, []);
 
   return (
-    <div className="App bg-dark-navy text-white min-h-screen overflow-x-hidden relative">
+    <div className="App bg-dark-navy text-white min-h-screen relative">
       {init && <Particles options={particlesOptions} />}
       <div className="relative z-10">
         <Navbar key={refresh} />
-        <Profile />
-        <About />
-        <Experience />
-        <Projects />
-        <Contact />
+        <Profile className="overflow-x-hidden" />
+        <About className="overflow-x-hidden" />
+        <Experience className="overflow-x-hidden" />
+        <Projects  className="overflow-x-hidden"/>
+        <Contact className="overflow-x-hidden" />
       </div>
     </div>
   );
