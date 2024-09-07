@@ -40,7 +40,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App bg-dark-navy text-white min-h-screen relative">
+    <div className="App bg-dark-navy text-white min-h-screen overflow-x-hidden relative">
       {init && <Particles options={particlesOptions} />}
       <div className="relative z-10">
         <Navbar key={refresh} />
