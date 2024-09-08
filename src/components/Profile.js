@@ -10,7 +10,7 @@ const Profile = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
       id="profile"
-      className="flex flex-col justify-start items-center min-h-screen overflow-x-hidenn overflow-hidden relative font-sans pt-4"  
+      className="flex flex-col justify-start items-center min-h-screen overflow-x-hidden relative font-sans pt-4"  
     >
       <div className="section__pic-container z-10 mb-4">
         <img
