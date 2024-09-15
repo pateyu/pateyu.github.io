@@ -8,7 +8,15 @@ import {
   FaGithub,
   FaDatabase,
 } from "react-icons/fa";
-import { SiTailwindcss, SiJavascript } from "react-icons/si";
+import {
+  SiTailwindcss,
+  SiJavascript,
+  SiAwslambda,
+  SiAmazondynamodb,
+  SiTypescript,
+  SiSupabase,
+  SiDocker,
+} from "react-icons/si";
 import { Tooltip } from "react-tooltip";
 import { useInView } from "./useInView";
 
@@ -19,13 +27,15 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "AmrtyuBot",
+      title: "StudyBot",
       description:
-        "A Discord Study bot with Canvas Integration, Study Timer, and more. Named after my gamertag because I would rather be gaming.",
+        "A Discord Study bot with Canvas Integration. Can get assignments, announcements, and more right from discord. ",
       link: "https://github.com/pateyu/AmrtyuBot",
       skills: [
         { icon: <FaPython />, name: "Python" },
-        { icon: <FaGithub />, name: "GitHub" },
+        { icon: <SiAmazondynamodb />, name: "DynamoDB" },
+        { icon: <SiDocker />, name: "Docker" },
+        { icon: <SiAwslambda />, name: "Lambda" },
       ],
     },
     {
@@ -48,6 +58,18 @@ const Projects = () => {
         { icon: <FaFlask />, name: "Flask" },
         { icon: <SiTailwindcss />, name: "Tailwind CSS" },
         { icon: <FaDatabase />, name: "SQL" },
+      ],
+    },
+    {
+      title: "Linkm.e",
+      description:
+        "A link-in-bio website with login, link management, profile. Built with React, Supabase, TypeScript, and Tailwind CSS.",
+      link: "https://github.com/pateyu/linkm.e",
+      skills: [
+        { icon: <FaReact />, name: "React" },
+        { icon: <SiTailwindcss />, name: "Tailwind CSS" },
+        { icon: <SiTypescript />, name: "TypeScript" },
+        { icon: <SiSupabase />, name: "Supabase" },
       ],
     },
     {
