@@ -11,13 +11,12 @@ const experiences = [
         Developed a comprehensive simulation program to model complex life
         cycles and behaviors of microorganisms in a dynamic environment, in
         collaboration with a team of biologists, ensuring biological accuracy.
-        Designed and built a user-friendly web application capable of running
-        and comparing multiple simulations concurrently, with integrated
-        real-time data collection and visualization, facilitating
-        cross-disciplinary research. Integrated an automated data pipeline with
-        the web application for real-time data processing, storage, and
-        analysis, improving efficiency and enabling deeper insights across
-        biological models.
+        Designed and implemented an automated ETL pipeline using R and PySpark
+        for distributed processing and storage of time-series simulation data in
+        a PostgreSQL database. Built a web application with Django and
+        WebSockets to visualize real-time simulation data, improving
+        accessibility for cross-disciplinary research and enabling deeper
+        analysis.
       </p>
     ),
     duration: "Oct 2023 - Present",
@@ -27,16 +26,12 @@ const experiences = [
     company: "Missouri University of Science and Technology",
     content: () => (
       <p>
-        Engineered a testbed to assess cognitive load using real-time EEG (brain
-        activity) and PPG (heart rate) sensor data, with precise synchronization
-        of wearable devices to ensure high accuracy in data collection. Led the
-        development of 2 out of 3 cognitive tasks, handling both frontend and
-        backend components, resulting in enhanced performance and system
-        efficiency. Integrated EEG (via MATLAB) and PPG (via BLE) sensors,
-        enabling real-time physiological data capture and analysis for cognitive
-        load prediction. Planned and initiated the development of a
-        Convolutional Spiking Neural Network (CSNN) model to predict cognitive
-        workload, leveraging EEG and PPG data for accurate real-time insights.
+        Engineered a testbed to assess cognitive load using real-time EEG and
+        PPG sensor data, synchronizing wearable devices via MATLAB and BLE. Led
+        the frontend and backend development of cognitive tasks, enhancing data
+        collection accuracy. Designed and implemented a Convolutional Spiking
+        Neural Network (CSNN) model using snntorch to predict cognitive
+        workload, integrating real-time data streaming through Apache Kafka.
       </p>
     ),
     duration: "May 2024 - Aug 2024",
@@ -47,15 +42,12 @@ const experiences = [
       "Department of Computer Science, Missouri University of Science and Technology",
     content: () => (
       <p>
-        Web scraped and annotated over 27,000 disaster-related tweets with
-        metadata (location, time, severity), applying text normalization and
-        handling imbalanced data to build a high-quality dataset for first
-        responder classification. Developed and fine-tuned a RoBERTa-based
-        machine learning model that achieved an accuracy of up to 98% in
-        classifying first responders across various crisis events. Built an
-        interactive web application to visualize datasets and model predictions,
-        improving accessibility and providing actionable insights for
-        researchers and emergency responders.
+        Web scraped and annotated over 27,000 disaster-related tweets to build a
+        high-quality dataset for first responder classification. Developed a
+        RoBERTa-based machine learning model that achieved 98% accuracy in
+        classifying crisis-related events. Built an interactive web application
+        using PyTorch and ONNX.js for real-time data visualization and model
+        predictions, providing actionable insights for emergency responders.
       </p>
     ),
     duration: "Jan 2024 - Present",
@@ -66,12 +58,11 @@ const experiences = [
     content: () => (
       <p>
         Developed responsive web pages using HTML, CSS, and JavaScript, ensuring
-        mobile responsiveness, optimized load times, and adherence to web
-        accessibility standards. Collaborated closely with the design team to
-        create visually appealing and user-friendly interfaces, resulting in a
-        20% increase in user engagement. Integrated data analytics features to
-        track user behavior, enabling data-driven decisions and real-time design
-        adjustments that enhanced the overall user experience.
+        mobile responsiveness and optimized load times. Collaborated with the
+        design team to create visually appealing, user-friendly interfaces,
+        resulting in a 20% increase in user engagement. Integrated advanced
+        analytics features, enabling real-time data-driven design adjustments
+        based on user behavior insights.
       </p>
     ),
     duration: "Jun 2023 - Aug 2023",
@@ -81,25 +72,24 @@ const experiences = [
     company: "Missouri University of Science and Technology",
     content: () => (
       <p>
-        As a Computer Science Student Ambassador, I guide prospective students
-        and their families through an insider’s perspective of the program. My
-        responsibilities include:
+        As a Computer Science Student Ambassador, I provide prospective students
+        with an insider’s perspective on the program through personalized tours
+        and guidance. Responsibilities include:
         <ul className="list-disc ml-5">
           <li>
-            Leading personalized tours, showcasing key Computer Science
-            facilities and resources.
+            Leading tours of key Computer Science facilities and resources.
           </li>
           <li>
-            Providing curriculum guidance and helping students navigate course
-            requirements, electives, and academic paths.
+            Providing curriculum advice and helping students navigate academic
+            paths.
           </li>
           <li>
-            Advising on class planning to balance core requirements with
-            electives, minors, or double majors.
+            Advising on course planning to balance requirements with electives
+            and minors.
           </li>
           <li>
-            Engaging in Q&A sessions, answering questions about the program,
-            college life, and career opportunities in computer science.
+            Engaging in Q&A sessions about college life and career opportunities
+            in computer science.
           </li>
         </ul>
       </p>
@@ -111,10 +101,9 @@ const experiences = [
     company: "Menards",
     content: () => (
       <p>
-        Delivered personalized customer service, providing tailored flooring
-        recommendations that consistently met customer needs. Built strong
-        customer relationships, which helped meet sales targets and fostered
-        repeat business.
+        Delivered personalized customer service by providing tailored flooring
+        recommendations. Built strong customer relationships, consistently met
+        sales targets, and fostered repeat business.
       </p>
     ),
     duration: "Aug 2023 - Nov 2023",
