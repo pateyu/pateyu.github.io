@@ -1,13 +1,6 @@
 import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  FaReact,
-  FaNodeJs,
-  FaPython,
-  FaFlask,
-  FaGithub,
-  FaDatabase,
-} from "react-icons/fa";
+import { FaReact, FaNodeJs, FaPython, FaFlask, FaGithub } from "react-icons/fa";
 import {
   SiTailwindcss,
   SiJavascript,
@@ -16,6 +9,7 @@ import {
   SiTypescript,
   SiSupabase,
   SiDocker,
+  SiPostgresql,
 } from "react-icons/si";
 import { Tooltip } from "react-tooltip";
 import { useInView } from "./useInView";
@@ -55,9 +49,9 @@ const Projects = () => {
         "A dynamic culinary platform with personalized recipe management and advanced search capabilities. Comes with dietary filters, ratings, and custom cookbooks.",
       link: "https://github.com/pateyu/CookbookProject",
       skills: [
-        { icon: <FaFlask />, name: "Flask" },
         { icon: <SiTailwindcss />, name: "Tailwind CSS" },
-        { icon: <FaDatabase />, name: "SQL" },
+        { icon: <SiPostgresql />, name: "Postgres" },
+        { icon: <FaFlask />, name: "Flask" },
       ],
     },
     {
