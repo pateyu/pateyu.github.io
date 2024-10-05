@@ -12,6 +12,7 @@ import particlesOptions from "./particles.json";
 function App() {
   const [init, setInit] = useState(false);
   const [refresh, setRefresh] = useState(0);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (init) {
@@ -26,6 +27,20 @@ function App() {
   }, [init]);
 
   useEffect(() => {
+    const firstVisit = localStorage.getItem("firstVisit");
+    if (!firstVisit) {
+      setLoading(true);
+      localStorage.setItem("firstVisit", "false");
+
+      const timer = setTimeout(() => {
+        setLoading(false);
+      }, 2000);
+
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  useEffect(() => {
     const handleResize = () => {
       setRefresh((prev) => prev + 1);
     };
@@ -38,6 +53,14 @@ function App() {
       window.removeEventListener("orientationchange", handleResize);
     };
   }, []);
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen bg-dark-navy">
+        <div className="loader"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="App bg-dark-navy text-white min-h-screen relative">
