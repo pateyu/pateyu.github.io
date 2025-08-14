@@ -1,4 +1,4 @@
-# My Portfolio
+# Yug Patel — Portfolio
 
 This repository contains the source code for my personal portfolio website, built with React, Vite, and Tailwind CSS.
 

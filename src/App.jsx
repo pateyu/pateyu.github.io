@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail, ChevronDown, ExternalLink, Menu, X } from 'lucide-react';
+import { Github, Linkedin, Mail, ChevronDown, ExternalLink, Menu, X, Download} from 'lucide-react';
 
 const App = () => {
   const [currentSection, setCurrentSection] = useState(0);
@@ -95,7 +95,7 @@ const App = () => {
       company: "U.S. Geological Survey (USGS)",
       period: "Jan 2025 – Present", 
       location: "Rolla, MO",
-      description: "Developed automated ML workflows for geospatial analysis, reducing processing time from weeks to hours. Slashed compute time by 60% using CUDA-accelerated parallel processing on HPC environments."
+      description: "Developed automated ML workflows for large-scale geospatial analysis, reducing processing time from weeks to hours. Engineered a feature extraction pipeline for terabyte-scale hydrographic data and applied unsupervised clustering models for density assessments."
     },
     {
       title: "CS Research Intern",
@@ -210,7 +210,7 @@ const App = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
             {/* Left Column - Text */}
             <div className="space-y-6 lg:space-y-8 order-2 lg:order-1">
-              <div className="space-y-4">
+              <div className="space-y-6">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
                   Yug Patel
                 </h1>
@@ -242,30 +242,46 @@ const App = () => {
                   <div className="text-xs lg:text-sm text-gray-500">Projects</div>
                 </div>
               </div>
-
               <div className="flex space-x-6 pt-4">
-                <a 
-                  href="https://github.com/pateyu" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-gray-500 hover:text-green-400 transition-all duration-300 hover:scale-110 transform"
-                >
-                  <Github className="w-6 h-6" />
-                </a>
-                <a 
-                  href="https://www.linkedin.com/in/patel-yug" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-gray-500 hover:text-green-400 transition-all duration-300 hover:scale-110 transform"
-                >
-                  <Linkedin className="w-6 h-6" />
-                </a>
-                <a 
-                  href="mailto:yugbpatel30@gmail.com" 
-                  className="text-gray-500 hover:text-green-400 transition-all duration-300 hover:scale-110 transform"
-                >
-                  <Mail className="w-6 h-6" />
-                </a>
+                {/* GitHub Icon with Tooltip */}
+                <div className="relative group">
+                  <a href="https://github.com/pateyu" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-green-400 transition-all duration-300 hover:scale-110 transform">
+                    <Github className="w-6 h-6" />
+                  </a>
+                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1 bg-gray-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                    GitHub
+                  </div>
+                </div>
+
+                {/* LinkedIn Icon with Tooltip */}
+                <div className="relative group">
+                  <a href="https://www.linkedin.com/in/patel-yug" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-green-400 transition-all duration-300 hover:scale-110 transform">
+                    <Linkedin className="w-6 h-6" />
+                  </a>
+                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1 bg-gray-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                    LinkedIn
+                  </div>
+                </div>
+
+                {/* Mail Icon with Tooltip */}
+                <div className="relative group">
+                  <a href="mailto:yugbpatel30@gmail.com" className="text-gray-500 hover:text-green-400 transition-all duration-300 hover:scale-110 transform">
+                    <Mail className="w-6 h-6" />
+                  </a>
+                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1 bg-gray-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                    Email
+                  </div>
+                </div>
+
+                {/* Resume Icon with Tooltip */}
+                <div className="relative group">
+                  <a href="/Yug_Patel_Resume.pdf" download="Yug_Patel_Resume.pdf" className="text-gray-500 hover:text-green-400 transition-all duration-300 hover:scale-110 transform">
+                    <Download className="w-6 h-6" />
+                  </a>
+                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1 bg-gray-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                    Download Resume
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -375,7 +391,7 @@ const App = () => {
             I am actively seeking full-time and internship opportunities. I am also open to discussing graduate school opportunities and research collaborations.
           </p>
           
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto mb-12 sm:mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 max-w-5xl mx-auto mb-12 sm:mb-16">
             {/* Email Card */}
             <a 
               href="mailto:yugbpatel30@gmail.com"
@@ -409,7 +425,20 @@ const App = () => {
               <h3 className="text-base sm:text-lg font-bold text-white mb-2">LinkedIn</h3>
               <p className="text-gray-400 text-xs sm:text-sm">patel-yug</p>
             </a>
+            {/* Resume Card */}
+            <a 
+              href="/Yug_Patel_Resume.pdf"
+              download="Yug_Patel_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group p-6 sm:p-8 border border-gray-800 hover:border-green-400 transition-all duration-300 rounded-lg hover:shadow-lg hover:shadow-green-400/10 transform hover:-translate-y-1"
+            >
+              <Download className="w-6 sm:w-8 h-6 sm:h-8 text-green-400 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
+              <h3 className="text-base sm:text-lg font-bold text-white mb-2">Resume</h3>
+              <p className="text-gray-400 text-xs sm:text-sm">Download a copy</p>
+            </a>
           </div>
+
           
           <div className="flex items-center justify-center mt-12">
             <div className="flex items-center space-x-2">
