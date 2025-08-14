@@ -8,7 +8,7 @@ const App = () => {
   const [scrolled, setScrolled] = useState(false);
   const fullCommand = 'echo "Hello World"';
 
-  // Typing effect for command only
+  // Typing effect 
   useEffect(() => {
     if (typedCommand.length < fullCommand.length) {
       const timeout = setTimeout(() => {
@@ -44,7 +44,7 @@ const App = () => {
   const scrollToSection = (index) => {
     const sections = document.querySelectorAll('.section');
     sections[index]?.scrollIntoView({ behavior: 'smooth' });
-    setIsMenuOpen(false); // Close menu after navigation
+    setIsMenuOpen(false); 
   };
 
   const toggleMenu = () => {
@@ -87,7 +87,7 @@ const App = () => {
       title: "Computer Vision/Data Science Co-op",
       company: "Hunter Engineering Company",
       period: "May 2025 – Present",
-      location: "Remote",
+      location: "St. Louis, MO",
       description: "Led technical enhancements of Hunter's ANPR system, boosting accuracy by 10% with a two-stage recognition model using YOLOv9 and Vision Transformer. Developed data pipeline with active learning, cutting manual annotation by 75%."
     },
     {
@@ -122,7 +122,7 @@ const App = () => {
       title: "Software Developer",
       company: "Infosoft Systems Inc.",
       period: "May 2023 – Aug 2023",
-      location: "St. Louis, MO",
+      location: "Overland Park, KS",
       description: "Developed a full-stack web application for a client, handling both front-end and back-end implementation."
     }
   ];
