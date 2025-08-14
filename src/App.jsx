@@ -273,7 +273,7 @@ const App = () => {
             <div className="flex justify-center order-1 lg:order-2 mb-6 md:mb-8 lg:mb-0">
               <div className="w-64 sm:w-72 md:w-80 lg:w-80 h-64 sm:h-72 md:h-80 lg:h-80 rounded-full border-2 border-green-400/20 p-2 transition-all duration-300">
                 <img 
-                  src="/src/assets/linkedin.jfif" 
+                  src="/linkedin.jfif" 
                   alt="Yug Patel"
                   className="w-full h-full rounded-full object-cover"
                 />
